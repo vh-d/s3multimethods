@@ -24,7 +24,6 @@ ff.character.numeric <- function(x, y) {
   sprintf("Character '%s' + numeric %s", x, y)
 }
 
-
 ff.character.integer <- function(x, y) {
   sprintf("Character '%s' + integer %s", x, y)
 }
@@ -33,13 +32,29 @@ ff.character.integer <- function(x, y) {
 ff.character.character <- function(x, y) {
   sprintf("Character '%s' + character '%s'", x, y)
 }
+
+ff.numeric <- function(x, y){
+  UseMethod("ff.numeric", y)
+}
+
+ff.numeric.numeric <- function(x, y) {
+  sprintf("Numeric '%s' + numeric %s", x, y)
+}
+
+ff.numeric.character <- function(x, y) {
+  sprintf("Numeric '%s' + character %s", x, y)
+}
 ```
 
 ``` r
 # library(s3multimethods)
 
+ff(1, 2)
+#> [1] "Numeric '1' + numeric 2"
 ff("a", 1)
 #> [1] "Character 'a' + numeric 1"
+ff(1, "a")
+#> [1] "Numeric '1' + character a"
 ff("a", 1L)
 #> [1] "Character 'a' + integer 1"
 ff("a", 'b')

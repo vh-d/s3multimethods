@@ -11,3 +11,4 @@ License: What license it uses
 Encoding: UTF-8
 LazyData: true
 Licensee: MIT + file LICENSE
+RoxygenNote: 6.1.1
