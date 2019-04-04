@@ -38,7 +38,6 @@ ff.character.integer <- function(x, y) {
   sprintf("Character '%s' + integer %s", x, y)
 }
 
-
 ff.character.character <- function(x, y) {
   sprintf("Character '%s' + character '%s'", x, y)
 }
